@@ -3,7 +3,7 @@
     <div id="card">
         <div id="circle"></div>
         <img src="./../../../assets/img/004.png" alt="">
-        <span>No. 001</span>
-        <span>Charmander</span>
+        <span>No. {{id}}</span>
+        <span *ngIf="data">{{data.name | titlecase}}</span>
     </div>
 </div>

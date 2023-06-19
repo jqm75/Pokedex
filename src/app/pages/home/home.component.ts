@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Result } from 'src/app/interfaces/pokeapi';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit{
 
   constructor(private pokemonService: PokemonService){} 
 
-  pokemonList= [];
+  pokemonList: Result[] = [];
 
   ngOnInit(): void {
     this.loadList();
@@ -18,6 +19,8 @@ export class HomeComponent implements OnInit{
   
   async loadList(){
     this.pokemonList = [...this.pokemonList, ...await this.pokemonService.getByPage()];
+
+
   }
 
 }

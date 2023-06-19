@@ -6,6 +6,6 @@ export interface Data{
 }
 
 export interface Result{
-    name:       string
+    name:       string,
     url:        string
 }
