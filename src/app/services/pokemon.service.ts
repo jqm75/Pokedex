@@ -13,11 +13,13 @@ export class PokemonService {
     const resJson = await res.json();
     if( resJson.results.length > 0 ) return resJson.results;
     return[];
-
   }
   
-  getById(){
-    // https://pokeapi.co/api/v2/pokemon/
+  async getById(id:string){
+    const res = await fetch( `https://pokeapi.co/api/v2/${id}`);
+    const resJson = await res.json();
+    console.log(resJson);
+    
   }
   
   getByDescription(){

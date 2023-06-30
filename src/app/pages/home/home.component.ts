@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit{
   
   async loadList(){
     this.pokemonList = [...this.pokemonList, ...await this.pokemonService.getByPage()];
-
+    console.log(this.pokemonList);
+    
 
   }
 
